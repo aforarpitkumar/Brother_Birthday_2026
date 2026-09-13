@@ -1,0 +1,117 @@
+.slideshow {
+  max-width: 860px;
+  margin: 40px auto 0;
+}
+
+.slideshow-frame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #f1e9ef;
+  touch-action: pan-y;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.9s ease, transform 1.4s ease;
+  user-select: none;
+}
+
+.slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 22px -8px rgba(43, 37, 48, 0.4);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.slide-btn:hover {
+  background: #fff;
+  transform: scale(1.08);
+}
+
+.slide-btn--prev { left: 14px; }
+.slide-btn--next { right: 14px; }
+
+.slideshow-meta {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slideshow-caption {
+  min-height: 1.6em;
+  color: var(--muted);
+  font-size: 15.5px;
+  font-style: italic;
+}
+
+.slideshow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.slideshow-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(43, 37, 48, 0.18);
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.dot.is-active {
+  width: 26px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.slideshow-count {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .slideshow-frame {
+    aspect-ratio: 4 / 5;
+    border-radius: 22px;
+  }
+
+  .slide-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .slide-btn--prev { left: 10px; }
+  .slide-btn--next { right: 10px; }
+}

@@ -1,0 +1,416 @@
+.toy-shelf {
+  max-width: 1020px;
+  margin: 44px auto 0;
+}
+
+.toy-shelf-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.toy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.toy-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.toy-card--wide {
+  grid-column: 1 / -1;
+}
+
+.toy-head h3 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.toy-head p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ── RC car ────────────────────────────────────────────────── */
+.rc-area {
+  position: relative;
+  height: 240px;
+  border-radius: 16px;
+  background:
+    linear-gradient(rgba(43, 37, 48, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 37, 48, 0.035) 1px, transparent 1px),
+    #fdf3ec;
+  background-size: 28px 28px, 28px 28px, auto;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  touch-action: none;
+}
+
+.rc-rug {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  translate: -50% -50%;
+  width: 52%;
+  height: 46%;
+  border-radius: 50%;
+  background: rgba(142, 123, 255, 0.1);
+  border: 3px dashed rgba(142, 123, 255, 0.25);
+}
+
+.rc-lamp {
+  position: absolute;
+  left: 6%;
+  top: 8%;
+  font-size: 26px;
+}
+
+.rc-tv {
+  position: absolute;
+  right: 6%;
+  top: 8%;
+  font-size: 26px;
+}
+
+.rc-car {
+  position: absolute;
+  font-size: 40px;
+  line-height: 1;
+  transition: translate 0s;
+  filter: drop-shadow(0 8px 8px rgba(43, 37, 48, 0.25));
+  user-select: none;
+}
+
+.rc-car--honk {
+  animation: rc-shake 0.3s ease 2;
+}
+
+@keyframes rc-shake {
+  25% { margin-top: -3px; }
+  75% { margin-top: 3px; }
+}
+
+.rc-bubble {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  translate: -50% -6px;
+  background: #2b2530;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 12px;
+  animation: rc-bubble-in 0.25s cubic-bezier(0.3, 1.4, 0.5, 1) both;
+}
+
+@keyframes rc-bubble-in {
+  from { opacity: 0; transform: translateY(6px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.rc-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding-top: 2px;
+}
+
+.rc-dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 52px);
+  grid-template-rows: repeat(2, 46px);
+  gap: 6px;
+}
+
+.rc-btn {
+  border-radius: 12px;
+  background: #f3ecf7;
+  border: 1px solid var(--line);
+  font-size: 15px;
+  color: var(--ink);
+  font-weight: 700;
+  touch-action: none;
+  user-select: none;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.rc-btn:hover {
+  background: #efe4f6;
+}
+
+.rc-btn:active {
+  transform: scale(0.92);
+  background: var(--accent);
+  color: #fff;
+}
+
+.rc-btn--up { grid-column: 2; grid-row: 1; }
+.rc-btn--left { grid-column: 1; grid-row: 2; }
+.rc-btn--down { grid-column: 2; grid-row: 2; }
+.rc-btn--right { grid-column: 3; grid-row: 2; }
+
+.rc-horn {
+  align-self: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+  padding: 12px 22px;
+  box-shadow: 0 10px 22px -10px rgba(255, 101, 132, 0.7);
+  transition: transform 0.2s ease;
+}
+
+.rc-horn:hover {
+  transform: translateY(-2px);
+}
+
+.rc-horn:active {
+  transform: scale(0.95);
+}
+
+/* ── Handheld console ──────────────────────────────────────── */
+.console {
+  background: linear-gradient(160deg, #5b5170, #3a3348);
+  border-radius: 18px;
+  padding: 14px 14px 16px;
+  box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.15);
+}
+
+.console-screen {
+  position: relative;
+  height: 130px;
+  border-radius: 10px;
+  background: #b8e6c1;
+  overflow: hidden;
+}
+
+.console-score {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: #274d31;
+}
+
+.console-msg {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #274d31;
+  text-align: center;
+  animation: console-msg-in 0.25s ease both;
+}
+
+@keyframes console-msg-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.console-runner {
+  position: absolute;
+  bottom: 8px;
+  right: -34px;
+  font-size: 26px;
+  animation: console-run 3.2s linear infinite;
+}
+
+@keyframes console-run {
+  from { right: -34px; }
+  to { right: 104%; }
+}
+
+.console-player {
+  position: absolute;
+  bottom: 10px;
+  left: 16px;
+  font-size: 26px;
+}
+
+.console-player.is-jumping {
+  animation: console-jump 0.48s ease;
+}
+
+@keyframes console-jump {
+  40% { transform: translateY(-34px); }
+  100% { transform: translateY(0); }
+}
+
+.console-pad {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.console-dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 24px);
+  grid-template-rows: repeat(3, 24px);
+  gap: 2px;
+}
+
+.console-key {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 5px;
+  font-size: 9px;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.console-btns {
+  display: flex;
+  gap: 12px;
+}
+
+.console-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  transition: transform 0.1s ease, filter 0.2s ease;
+}
+
+.console-btn:active {
+  transform: scale(0.88);
+}
+
+.console-btn--a {
+  background: #ff6584;
+}
+
+.console-btn--b {
+  background: #8e7bff;
+}
+
+/* ── Mini robot ────────────────────────────────────────────── */
+.robot {
+  position: relative;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-height: 170px;
+}
+
+.robot-body {
+  font-size: 74px;
+  line-height: 1;
+  filter: drop-shadow(0 14px 18px rgba(43, 37, 48, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.robot:hover .robot-body {
+  transform: translateY(-4px);
+}
+
+.robot-body.is-wiggling {
+  animation: robot-wiggle 0.6s ease;
+}
+
+@keyframes robot-wiggle {
+  20% { transform: rotate(-14deg) scale(1.08); }
+  50% { transform: rotate(12deg) scale(1.12); }
+  80% { transform: rotate(-6deg) scale(1.04); }
+}
+
+.robot-bubble {
+  position: absolute;
+  bottom: 78%;
+  left: 50%;
+  translate: -50% 0;
+  width: max-content;
+  max-width: 210px;
+  background: #2b2530;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 8px 13px;
+  border-radius: 14px;
+  z-index: 2;
+  animation: rc-bubble-in 0.3s cubic-bezier(0.3, 1.4, 0.5, 1) both;
+}
+
+.robot-bubble--up {
+  bottom: 96%;
+}
+
+/* ── Smart speaker ─────────────────────────────────────────── */
+.speaker {
+  position: relative;
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-height: 170px;
+}
+
+.speaker-body {
+  position: relative;
+  width: 92px;
+  height: 108px;
+  border-radius: 26px 26px 20px 20px;
+  background: linear-gradient(170deg, #4d4460, #2c2638);
+  box-shadow: inset 0 3px 6px rgba(255, 255, 255, 0.16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: transform 0.3s ease;
+}
+
+.speaker:hover .speaker-body {
+  transform: translateY(-4px);
+}
+
+.speaker-body i {
+  width: 54px;
+  height: 3.5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.speaker-body.is-playing i {
+  background: var(--accent);
+  animation: speaker-eq 0.9s ease-in-out infinite alternate;
+}
+
+.speaker-body.is-playing i:nth-child(2) { animation-delay: 0.15s; }
+.speaker-body.is-playing i:nth-child(3) { animation-delay: 0.3s; }
+.speaker-body.is-playing i:nth-child(4) { animation-delay: 0.45s; }
+
+@keyframes speaker-eq {
+  from { transform: scaleX(0.45); opacity: 0.55; }
+  to { transform: scaleX(1); opacity: 1; }
+}

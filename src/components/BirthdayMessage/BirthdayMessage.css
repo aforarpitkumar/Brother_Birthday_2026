@@ -1,0 +1,47 @@
+.message-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background:
+    radial-gradient(420px 260px at 90% 0%, rgba(142, 123, 255, 0.12), transparent 70%),
+    radial-gradient(420px 260px at 0% 100%, rgba(255, 101, 132, 0.12), transparent 70%),
+    var(--card);
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  box-shadow: var(--shadow-soft);
+  padding: clamp(32px, 6vw, 56px);
+}
+
+.message-body {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  color: #4c4457;
+  font-size: 16.5px;
+}
+
+.message-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.message-chips span {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: rgba(142, 123, 255, 0.09);
+  border: 1px solid rgba(142, 123, 255, 0.18);
+  padding: 8px 16px;
+  border-radius: 999px;
+}
+
+.message-sign {
+  margin-top: 34px;
+  font-size: clamp(30px, 5.5vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}

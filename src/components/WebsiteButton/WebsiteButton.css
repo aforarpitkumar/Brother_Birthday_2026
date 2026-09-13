@@ -1,0 +1,64 @@
+.builder-card {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.builder-title {
+  margin-top: 0;
+}
+
+.builder-screen {
+  flex: 1;
+  width: 100%;
+  min-height: 118px;
+  border-radius: 16px;
+  background: #14101c;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 13px;
+  text-align: left;
+}
+
+.builder-idea {
+  color: #ffd48a;
+  line-height: 1.5;
+}
+
+.builder-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.5;
+}
+
+.builder-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 13px;
+  margin-left: 1px;
+  background: #7ce8a8;
+  vertical-align: -2px;
+  animation: builder-blink 0.7s steps(1) infinite;
+}
+
+@keyframes builder-blink {
+  50% { opacity: 0; }
+}
+
+.builder-punch {
+  color: #7ce8a8;
+  font-weight: 700;
+  animation: punch-in 0.45s ease both;
+}
+
+@keyframes punch-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.builder-btn {
+  font-size: 14.5px;
+  padding: 11px 22px;
+}
